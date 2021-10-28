@@ -13,7 +13,16 @@ namespace G5_E2
         double[] periodo= new double [3];
 
         public string Carnet { get => carnet; set => carnet = value; }
-        public string Materia { get => materia; set => materia = value; }
+        public string Materia { get => materia;
+            set
+            {
+                materia = value;
+                if (materia == "")
+                {
+                    throw new Exception("Ingrese el  correo del alumno");
+                }
+            }
+        }
         public double[] Periodo { get => periodo; set => periodo = value; }
     }
 }

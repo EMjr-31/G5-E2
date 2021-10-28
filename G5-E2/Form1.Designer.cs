@@ -28,18 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txCarnet = new System.Windows.Forms.TextBox();
+            this.txtCarnet = new System.Windows.Forms.TextBox();
             this.txtNombres = new System.Windows.Forms.TextBox();
-            this.txtFecha = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtResponsable = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.errorProviderAlumnos = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAlumnos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -47,7 +50,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(91, 9);
+            this.label1.Location = new System.Drawing.Point(119, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(151, 20);
             this.label1.TabIndex = 0;
@@ -98,61 +101,73 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Responsable ";
             // 
-            // txCarnet
+            // txtCarnet
             // 
-            this.txCarnet.Location = new System.Drawing.Point(143, 51);
-            this.txCarnet.Name = "txCarnet";
-            this.txCarnet.Size = new System.Drawing.Size(170, 20);
-            this.txCarnet.TabIndex = 6;
+            this.txtCarnet.Location = new System.Drawing.Point(143, 51);
+            this.txtCarnet.Name = "txtCarnet";
+            this.txtCarnet.Size = new System.Drawing.Size(200, 20);
+            this.txtCarnet.TabIndex = 6;
+            this.txtCarnet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txCarnet_KeyPress);
+            this.txtCarnet.Leave += new System.EventHandler(this.txtCarnet_Leave);
             // 
             // txtNombres
             // 
             this.txtNombres.Location = new System.Drawing.Point(143, 85);
             this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(170, 20);
+            this.txtNombres.Size = new System.Drawing.Size(200, 20);
             this.txtNombres.TabIndex = 7;
-            // 
-            // txtFecha
-            // 
-            this.txtFecha.Location = new System.Drawing.Point(143, 117);
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(170, 20);
-            this.txtFecha.TabIndex = 8;
+            this.txtNombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombres_KeyPress);
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(143, 150);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(170, 20);
+            this.txtEmail.Size = new System.Drawing.Size(200, 20);
             this.txtEmail.TabIndex = 9;
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // txtResponsable
             // 
             this.txtResponsable.Location = new System.Drawing.Point(143, 183);
             this.txtResponsable.Name = "txtResponsable";
-            this.txtResponsable.Size = new System.Drawing.Size(170, 20);
+            this.txtResponsable.Size = new System.Drawing.Size(200, 20);
             this.txtResponsable.TabIndex = 10;
+            this.txtResponsable.TextChanged += new System.EventHandler(this.txtResponsable_TextChanged);
+            this.txtResponsable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtResponsable_KeyPress);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(238, 226);
+            this.btnGuardar.Location = new System.Drawing.Point(268, 226);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 11;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(143, 120);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 12;
+            this.dateTimePicker1.Leave += new System.EventHandler(this.dateTimePicker1_Leave);
+            // 
+            // errorProviderAlumnos
+            // 
+            this.errorProviderAlumnos.ContainerControl = this;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 261);
+            this.ClientSize = new System.Drawing.Size(390, 261);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtResponsable);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtFecha);
             this.Controls.Add(this.txtNombres);
-            this.Controls.Add(this.txCarnet);
+            this.Controls.Add(this.txtCarnet);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -161,6 +176,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Ingreso de Alumnos";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAlumnos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,12 +190,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txCarnet;
+        private System.Windows.Forms.TextBox txtCarnet;
         private System.Windows.Forms.TextBox txtNombres;
-        private System.Windows.Forms.TextBox txtFecha;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtResponsable;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ErrorProvider errorProviderAlumnos;
     }
 }
 
