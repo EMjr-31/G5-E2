@@ -8,3 +8,4 @@ C:\Users\EMjr\Documents\Universidad\Ciclo 02 -2021\POO\Lab\Lab 5\G5-E2\G5-E2\obj
 C:\Users\EMjr\Documents\Universidad\Ciclo 02 -2021\POO\Lab\Lab 5\G5-E2\G5-E2\obj\Debug\G5-E2.csproj.CoreCompileInputs.cache
 C:\Users\EMjr\Documents\Universidad\Ciclo 02 -2021\POO\Lab\Lab 5\G5-E2\G5-E2\obj\Debug\G5-E2.exe
 C:\Users\EMjr\Documents\Universidad\Ciclo 02 -2021\POO\Lab\Lab 5\G5-E2\G5-E2\obj\Debug\G5-E2.pdb
+C:\Users\EMjr\Documents\Universidad\Ciclo 02 -2021\POO\Lab\Lab 5\G5-E2\G5-E2\obj\Debug\G5_E2.Notas.resources

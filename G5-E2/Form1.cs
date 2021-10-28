@@ -164,6 +164,10 @@ namespace G5_E2
                     Alumno.Fecha = dateTimePicker1.Value.Date;
                     Alumno.Responsable = txtResponsable.Text;
                     MessageBox.Show("Usuario registrado exitosamente");
+                    ///Envio de informacion al segundo form 
+                    
+                    Notas notas = new Notas(Alumno.Nombres, Alumno.Carnet);
+                    notas.Show();
                 }
                 catch(Exception x)
                 {

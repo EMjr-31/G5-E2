@@ -28,27 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtcarnet = new System.Windows.Forms.TextBox();
+            this.txtMat = new System.Windows.Forms.TextBox();
+            this.txtp1 = new System.Windows.Forms.TextBox();
+            this.txtp2 = new System.Windows.Forms.TextBox();
+            this.txtp3 = new System.Windows.Forms.TextBox();
+            this.txtnom = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnRegistrar = new System.Windows.Forms.Button();
             this.lbNotaProm = new System.Windows.Forms.Label();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.errorProviderNotas = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNotas)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -100,79 +101,67 @@
             this.label5.Text = "Segundo Periodo";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(30, 158);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Segundo Periodo";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(30, 207);
+            this.label7.Location = new System.Drawing.Point(30, 154);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 13);
             this.label7.TabIndex = 6;
             this.label7.Text = "Tercer Periodo";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // textBox1
+            // txtcarnet
             // 
-            this.textBox1.Location = new System.Drawing.Point(154, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtcarnet.Location = new System.Drawing.Point(154, 58);
+            this.txtcarnet.Name = "txtcarnet";
+            this.txtcarnet.ReadOnly = true;
+            this.txtcarnet.Size = new System.Drawing.Size(100, 20);
+            this.txtcarnet.TabIndex = 7;
             // 
-            // textBox2
+            // txtMat
             // 
-            this.textBox2.Location = new System.Drawing.Point(154, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 8;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtMat.Location = new System.Drawing.Point(154, 19);
+            this.txtMat.Name = "txtMat";
+            this.txtMat.Size = new System.Drawing.Size(100, 20);
+            this.txtMat.TabIndex = 8;
+            this.txtMat.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtMat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMat_KeyPress);
             // 
-            // textBox3
+            // txtp1
             // 
-            this.textBox3.Location = new System.Drawing.Point(154, 61);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 9;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtp1.Location = new System.Drawing.Point(154, 61);
+            this.txtp1.Name = "txtp1";
+            this.txtp1.Size = new System.Drawing.Size(100, 20);
+            this.txtp1.TabIndex = 9;
+            this.txtp1.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtp1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtp1_KeyPress);
             // 
-            // textBox4
+            // txtp2
             // 
-            this.textBox4.Location = new System.Drawing.Point(154, 108);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 10;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.txtp2.Location = new System.Drawing.Point(154, 108);
+            this.txtp2.Name = "txtp2";
+            this.txtp2.Size = new System.Drawing.Size(100, 20);
+            this.txtp2.TabIndex = 10;
+            this.txtp2.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.txtp2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtp2_KeyPress);
             // 
-            // textBox5
+            // txtp3
             // 
-            this.textBox5.Location = new System.Drawing.Point(154, 151);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 11;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.txtp3.Location = new System.Drawing.Point(154, 147);
+            this.txtp3.Name = "txtp3";
+            this.txtp3.Size = new System.Drawing.Size(100, 20);
+            this.txtp3.TabIndex = 12;
+            this.txtp3.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.txtp3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtp3_KeyPress);
             // 
-            // textBox6
+            // txtnom
             // 
-            this.textBox6.Location = new System.Drawing.Point(154, 200);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 12;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(154, 19);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 13;
+            this.txtnom.Location = new System.Drawing.Point(154, 19);
+            this.txtnom.Name = "txtnom";
+            this.txtnom.ReadOnly = true;
+            this.txtnom.Size = new System.Drawing.Size(100, 20);
+            this.txtnom.TabIndex = 13;
             // 
             // label8
             // 
@@ -186,9 +175,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.txtnom);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtcarnet);
             this.groupBox1.Location = new System.Drawing.Point(24, 50);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(290, 88);
@@ -199,46 +188,49 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lbNotaProm);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.txtp3);
+            this.groupBox2.Controls.Add(this.txtMat);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.txtp2);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.txtp1);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Location = new System.Drawing.Point(24, 144);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(290, 272);
+            this.groupBox2.Size = new System.Drawing.Size(290, 231);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Registro de Notas";
             // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.Location = new System.Drawing.Point(239, 422);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
-            this.btnRegistrar.TabIndex = 17;
-            this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.UseVisualStyleBackColor = true;
-            // 
             // lbNotaProm
             // 
             this.lbNotaProm.AutoSize = true;
-            this.lbNotaProm.Location = new System.Drawing.Point(134, 244);
+            this.lbNotaProm.Location = new System.Drawing.Point(134, 191);
             this.lbNotaProm.Name = "lbNotaProm";
             this.lbNotaProm.Size = new System.Drawing.Size(80, 13);
             this.lbNotaProm.TabIndex = 13;
             this.lbNotaProm.Text = "Nota Promerio: ";
             // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.Location = new System.Drawing.Point(239, 393);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
+            this.btnRegistrar.TabIndex = 17;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // errorProviderNotas
+            // 
+            this.errorProviderNotas.ContainerControl = this;
+            // 
             // Notas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 457);
+            this.ClientSize = new System.Drawing.Size(341, 427);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
@@ -249,6 +241,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNotas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,19 +254,18 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtcarnet;
+        private System.Windows.Forms.TextBox txtMat;
+        private System.Windows.Forms.TextBox txtp1;
+        private System.Windows.Forms.TextBox txtp2;
+        private System.Windows.Forms.TextBox txtp3;
+        private System.Windows.Forms.TextBox txtnom;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lbNotaProm;
         private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.ErrorProvider errorProviderNotas;
     }
 }
